@@ -33,7 +33,7 @@ $ composer require ue555/nengo
 <?php
 require 'vendor/autoload.php';
 
-use ue555\nengo;
+use ue555\nengo\JapaneseNengoGenerator;
 
 $nengo = new JapaneseNengoGenerator();
 var_dump($nengo->to_wareki(20220112));
@@ -46,7 +46,7 @@ var_dump($nengo->to_wareki(20220112));
 <?php
 require 'path-to-Nengo-directory/autoload.php';
 
-use ue555\nengo;
+use ue555\nengo\JapaneseNengoGenerator;
 
 $nengo = new JapaneseNengoGenerator();
 var_dump($nengo->to_wareki(20220112));
