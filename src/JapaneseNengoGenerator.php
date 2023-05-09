@@ -1,6 +1,6 @@
 <?php
 
-namespace Ue555\Nengo;
+namespace ue555\nengo;
 
 class JapaneseNengoGenerator
 {
