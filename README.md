@@ -24,7 +24,7 @@ $ composer require ue555/nengo
 ```json
 {
     "require": {
-        "ue555/nengo": "^1.0"
+        "ue555/nengo": "^1.0.1"
     }
 }
 ```
