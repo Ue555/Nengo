@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Ue555\Nengo;
+namespace ue555\nengo;
 
 use PHPUnit\Framework\TestCase;
 
