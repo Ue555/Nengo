@@ -1,16 +1,16 @@
 {
-    "name": "Ue555/nengo",
+    "name": "ue555/nengo",
     "description": "Convert to Japanese and Western calendars",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Ue555\\nengo\\": "src/"
+            "ue555\\nengo\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Ue555\\nengo\\": "tests/"
+            "ue555\\nengo\\": "tests/"
         }
     },
     "scripts": {
@@ -18,7 +18,7 @@
     },
     "authors": [
         {
-            "name": "Ue555",
+            "name": "ue555",
             "email": "zerozero53205320@gmail.com"
         }
     ],
