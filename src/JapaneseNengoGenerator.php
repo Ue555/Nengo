@@ -56,6 +56,9 @@ class JapaneseNengoGenerator
             $dt_era = new \DateTime($era['time']);
             if ($dt->format('Ymd') >= $dt_era->format('Ymd')) {
                 $result['year'] = sprintf('%02d', $dt->format('Y') - $dt_era->format('Y') + 1);
+                if ($result['year'] == '01') {
+                    $result['year'] = '元年';
+                }
                 $result['wareki'] = $era['jp'];
                 break;
             }
