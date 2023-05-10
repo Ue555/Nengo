@@ -5,7 +5,7 @@
 ```php
 <?php
 
-use ue555\nengo;
+use ue555\nengo\JapaneseNengoGenerator;
 
 $nengo = new JapaneseNengoGenerator();
 // 和暦から西暦に変換
@@ -24,7 +24,7 @@ $ composer require ue555/nengo
 ```json
 {
     "require": {
-        "ue555/nengo": "^1.0.1"
+        "ue555/nengo": "^1.0.2"
     }
 }
 ```
@@ -33,7 +33,7 @@ $ composer require ue555/nengo
 <?php
 require 'vendor/autoload.php';
 
-use ue555\nengo;
+use ue555\nengo\JapaneseNengoGenerator;
 
 $nengo = new JapaneseNengoGenerator();
 var_dump($nengo->to_wareki(20220112));
@@ -46,7 +46,7 @@ var_dump($nengo->to_wareki(20220112));
 <?php
 require 'path-to-Nengo-directory/autoload.php';
 
-use ue555\nengo;
+use ue555\nengo\JapaneseNengoGenerator;
 
 $nengo = new JapaneseNengoGenerator();
 var_dump($nengo->to_wareki(20220112));
