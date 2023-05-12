@@ -17,7 +17,7 @@ final class JapaneseNengoGeneratorTest extends TestCase
             'day' => '12'
         ];
         $japanese_nengo_generator = new JapaneseNengoGenerator();
-        $this->assertSame($japanese_nengo_generator->to_wareki('20211212'), $wareki_case1);
+        $this->assertSame($japanese_nengo_generator->toWareki('20211212'), $wareki_case1);
     }
 
     public function testToSeirekii_case1()
@@ -28,7 +28,7 @@ final class JapaneseNengoGeneratorTest extends TestCase
             'day' => '12'
         ];
         $japanese_nengo_generator = new JapaneseNengoGenerator();
-        $this->assertSame($japanese_nengo_generator->to_seireki('令和元年12月12日'), $seireki_case1);
+        $this->assertSame($japanese_nengo_generator->toSeireki('令和元年12月12日'), $seireki_case1);
     }
 
     public function testToWareki_case2()
@@ -40,7 +40,7 @@ final class JapaneseNengoGeneratorTest extends TestCase
             'day' => '12'
         ];
         $japanese_nengo_generator = new JapaneseNengoGenerator();
-        $this->assertSame($japanese_nengo_generator->to_wareki('19891212'), $wareki_case2);
+        $this->assertSame($japanese_nengo_generator->toWareki('19891212'), $wareki_case2);
     }
 
     public function testToSeirekii_case2()
@@ -51,6 +51,6 @@ final class JapaneseNengoGeneratorTest extends TestCase
             'day' => '12'
         ];
         $japanese_nengo_generator = new JapaneseNengoGenerator();
-        $this->assertSame($japanese_nengo_generator->to_seireki('平成元年12月12日'), $seireki_case2);
+        $this->assertSame($japanese_nengo_generator->toSeireki('平成元年12月12日'), $seireki_case2);
     }
 }
