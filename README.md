@@ -9,7 +9,7 @@ use ue555\nengo\JapaneseNengoGenerator;
 
 $nengo = new JapaneseNengoGenerator();
 // 和暦から西暦に変換
-var_dump($nengo->to_wareki(20220112)); // array(4) { ["wareki"] => string(6) "令和" ["year"] => string(2) "04" ["month"] => string(2) "01" ["day"] => string(2) "12" }
+var_dump($nengo->toWareki(20220112)); // array(4) { ["wareki"] => string(6) "令和" ["year"] => string(2) "04" ["month"] => string(2) "01" ["day"] => string(2) "12" }
 ```
 
 
@@ -36,7 +36,7 @@ require 'vendor/autoload.php';
 use ue555\nengo\JapaneseNengoGenerator;
 
 $nengo = new JapaneseNengoGenerator();
-var_dump($nengo->to_wareki(20220112));
+var_dump($nengo->toWareki(20220112));
 ```
 
 ### Without Composer
@@ -49,5 +49,5 @@ require 'path-to-Nengo-directory/autoload.php';
 use ue555\nengo\JapaneseNengoGenerator;
 
 $nengo = new JapaneseNengoGenerator();
-var_dump($nengo->to_wareki(20220112));
+var_dump($nengo->toWareki(20220112));
 ```

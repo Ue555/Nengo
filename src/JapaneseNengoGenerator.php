@@ -11,10 +11,10 @@ class JapaneseNengoGenerator
     * @return array $result 変換後の日付(和暦)
     *
     */
-    public function to_wareki($time = 'now')
+    public function toWareki($time = 'now')
     {
         // 元号一覧
-        $era_list = [
+        $eraNameList = [
         // 令和(2019年5月1日〜)
         [
             'jp' => '令和',
@@ -52,14 +52,14 @@ class JapaneseNengoGenerator
               'day' => sprintf('%02d', $dt->format('d'))
             ];
 
-        foreach ($era_list as $era) {
-            $dt_era = new \DateTime($era['time']);
-            if ($dt->format('Ymd') >= $dt_era->format('Ymd')) {
-                $result['year'] = sprintf('%02d', $dt->format('Y') - $dt_era->format('Y') + 1);
+        foreach ($eraNameList as $el) {
+            $dateEraName = new \DateTime($el['time']);
+            if ($dt->format('Ymd') >= $dateEraName->format('Ymd')) {
+                $result['year'] = sprintf('%02d', $dt->format('Y') - $dateEraName->format('Y') + 1);
                 if ($result['year'] == '01') {
                     $result['year'] = '元年';
                 }
-                $result['wareki'] = $era['jp'];
+                $result['wareki'] = $el['jp'];
                 break;
             }
         }
@@ -74,23 +74,23 @@ class JapaneseNengoGenerator
     * @return array $result 変換後の日付(西暦)
     *
     */
-    public function to_seireki($time)
+    public function toSeireki($time)
     {
         $time = str_replace('元年', '1年', mb_convert_kana($time, 'n'));
 
         if (preg_match('!^(大正|昭和|平成|令和)([0-9]+)年([0-9]+)月([0-9]+)日$!', $time, $matches)) {
-            $era_name = $matches[1];
+            $eraName = $matches[1];
             $year = intval($matches[2]);
             $month = intval($matches[3]);
             $day = intval($matches[4]);
 
-            if ($era_name === '大正') {
+            if ($eraName === '大正') {
                 $year += 1911;
-            } elseif ($era_name === '昭和') {
+            } elseif ($eraName === '昭和') {
                 $year += 1925;
-            } elseif ($era_name === '平成') {
+            } elseif ($eraName === '平成') {
                 $year += 1988;
-            } elseif ($era_name === '令和') {
+            } elseif ($eraName === '令和') {
                 $year += 2018;
             }
 
