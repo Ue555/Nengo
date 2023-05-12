@@ -37,9 +37,9 @@ class JapaneseNengoGenerator
         ],
         ];
 
-        $dt = '';
+        $date = '';
         try {
-            $dt = new \DateTime($time);
+            $date = new \DateTime($time);
         } catch (\Exception $e) {
             // 日付型の指定でない
             echo $e->getMessage();
@@ -48,14 +48,14 @@ class JapaneseNengoGenerator
             $result = [
               'wareki' => '',
               'year' => '',
-              'month' => sprintf('%02d', $dt->format('m')),
-              'day' => sprintf('%02d', $dt->format('d'))
+              'month' => sprintf('%02d', $date->format('m')),
+              'day' => sprintf('%02d', $date->format('d'))
             ];
 
         foreach ($eraNameList as $el) {
             $dateEraName = new \DateTime($el['time']);
-            if ($dt->format('Ymd') >= $dateEraName->format('Ymd')) {
-                $result['year'] = sprintf('%02d', $dt->format('Y') - $dateEraName->format('Y') + 1);
+            if ($date->format('Ymd') >= $dateEraName->format('Ymd')) {
+                $result['year'] = sprintf('%02d', $date->format('Y') - $dateEraName->format('Y') + 1);
                 if ($result['year'] == '01') {
                     $result['year'] = '元年';
                 }
