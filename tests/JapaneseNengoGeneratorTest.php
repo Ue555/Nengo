@@ -8,11 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 final class JapaneseNengoGeneratorTest extends TestCase
 {
-    /*
-     *
-     *
-     *
-     */
     public function testToWareki_case1()
     {
         $wareki_case1 = [
